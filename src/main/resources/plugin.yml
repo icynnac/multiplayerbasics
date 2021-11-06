@@ -1,0 +1,9 @@
+name: MultiplayerBasics
+version: 1.0
+main: me.icynnac.multiplayerbasics.MultiplayerBasics
+author: Icynnac
+description: Basic GUI for your multiplayer needs.
+commands:
+  mb:
+    description: The main command to open your server panel
+    permission: multiplayerbasics.mpui
