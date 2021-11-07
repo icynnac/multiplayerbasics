@@ -1,0 +1,6 @@
+# MultiplayerBasics Config
+messages:
+  prefix: '&b&lMultiplayer&f&lBasics &8&l>>'
+  player-not-found: '&cNobody is online with that name. Did you spell it right?'
+  no-permission: '&cNo permission. Please contact an administrator if this is a mistake.'
+  console-denied: "&cYou cant use this command in console."

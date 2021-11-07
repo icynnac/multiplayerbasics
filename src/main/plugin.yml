@@ -1,0 +1,12 @@
+name: MultiplayerBasics
+version: 1.0
+main: me.icynnac.multiplayerbasics.Main
+author: Icynnac
+description: Basic GUI for your multiplayer needs.
+commands:
+  mpb:
+    description: Server Panel
+    permission: multiplayerbasics.panel
+  mpbinfo:
+    description: Info for your plugin
+    permission: multiplayerbasics.info
