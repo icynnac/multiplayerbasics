@@ -12,8 +12,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
 
@@ -25,8 +23,9 @@ public class mpbUI implements CommandExecutor {
             if (p.hasPermission("multiplayerbasics.panel")) {
                 Inventory mpb = Bukkit.createInventory(p, 36, ChatColor.AQUA + "MultiplayerBasics Panel");
                 ItemStack admin = new ItemStack(Material.DIAMOND_SWORD);
-                ItemStack healall = new ItemStack(Material.POTION);
+                ItemStack healall = new ItemStack(Material.GOLDEN_APPLE);
                 ItemStack feedall = new ItemStack(Material.GRILLED_PORK);
+                ItemStack potall = new ItemStack(Material.POTION);
                 ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
                 ItemStack exit =  new ItemStack(Material.BARRIER);
 
@@ -37,11 +36,10 @@ public class mpbUI implements CommandExecutor {
                 adminM.setLore(adminL);
                 admin.setItemMeta(adminM);
 
-                PotionMeta healaM = (PotionMeta) healall.getItemMeta();
-                healaM.addCustomEffect(new PotionEffect(PotionEffectType.HEAL, 20, 1), true);
-                healaM.setDisplayName(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Heal All Players");
+                ItemMeta healaM = healall.getItemMeta();
+                healaM.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + "Heal All Players");
                 ArrayList<String> healaL = new ArrayList<>();
-                healaL.add(ChatColor.DARK_PURPLE + "Heal all players online.");
+                healaL.add(ChatColor.GREEN + "Heal all players online.");
                 healaM.setLore(healaL);
                 healall.setItemMeta(healaM);
 
@@ -51,6 +49,13 @@ public class mpbUI implements CommandExecutor {
                 feedaL.add(ChatColor.GOLD + "Fully restore saturation for all players.");
                 feedaM.setLore(feedaL);
                 feedall.setItemMeta(feedaM);
+
+                PotionMeta potallM = (PotionMeta) potall.getItemMeta();
+                potallM.setDisplayName(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Give All Players Effect");
+                ArrayList<String> potalL = new ArrayList<>();
+                potalL.add(ChatColor.LIGHT_PURPLE + "Give all players a potion effect.");
+                potallM.setLore(potalL);
+                potall.setItemMeta(potallM);
 
                 ItemMeta glassM = glass.getItemMeta();
                 glassM.setDisplayName(" ");
@@ -62,6 +67,7 @@ public class mpbUI implements CommandExecutor {
 
                 mpb.setItem(0, healall);
                 mpb.setItem(1, feedall);
+                mpb.setItem(2, potall);
                 mpb.setItem(13, admin);
 
                 mpb.setItem(27, glass);
