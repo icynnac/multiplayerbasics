@@ -1,5 +1,6 @@
 package me.icynnac.multiplayerbasics.GUIs;
 
+import me.icynnac.multiplayerbasics.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -66,11 +67,9 @@ public class mpbiUI implements CommandExecutor {
                 mpbigui.setItem(5, support);
                 mpbigui.setItem(7, exit);
                 p.openInventory(mpbigui);
-            } else {
-                sender.sendMessage(ChatColor.RED + "MultiplayerBasics >> No permission. Please contact an administrator if this is a mistake.");
             }
         } else {
-            sender.sendMessage(ChatColor.RED + "MultiplayerBasics >> You can't use this command in console.");
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.noconsole));
         }
         return false;
     }
