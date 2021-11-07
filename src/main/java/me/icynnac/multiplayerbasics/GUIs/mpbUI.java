@@ -21,9 +21,17 @@ public class mpbUI implements CommandExecutor {
             Player p = (Player) sender;
             if (p.hasPermission("multiplayerbasics.panel")) {
                 Inventory mpb = Bukkit.createInventory(p, 36, ChatColor.AQUA + "MultiplayerBasics Panel");
+                ItemStack admin = new ItemStack(Material.DIAMOND_SWORD);
                 ItemStack reload = new ItemStack(Material.WOOL, 1, (short) 4);
                 ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
                 ItemStack exit =  new ItemStack(Material.BARRIER);
+
+                ItemMeta adminM = admin.getItemMeta();
+                adminM.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "Administrative Actions");
+                ArrayList<String> adminL = new ArrayList<>();
+                adminL.add(ChatColor.RED + "Actions that only trusted people should be able to use.");
+                adminM.setLore(adminL);
+                admin.setItemMeta(adminM);
 
                 ItemMeta reloadM = reload.getItemMeta();
                 reloadM.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + "Reload All Plugins");
@@ -41,7 +49,8 @@ public class mpbUI implements CommandExecutor {
                 exitM.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "Exit");
                 exit.setItemMeta(exitM);
 
-                mpb.setItem(0, reload);
+                mpb.setItem(13, admin);
+                mpb.setItem(14, reload);
 
                 mpb.setItem(27, glass);
                 mpb.setItem(28, glass);
