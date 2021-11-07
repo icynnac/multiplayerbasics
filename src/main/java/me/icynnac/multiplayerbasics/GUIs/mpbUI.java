@@ -33,14 +33,6 @@ public class mpbUI implements CommandExecutor {
                 adminM.setLore(adminL);
                 admin.setItemMeta(adminM);
 
-                ItemMeta reloadM = reload.getItemMeta();
-                reloadM.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + "Reload All Plugins");
-                ArrayList<String> reloadL = new ArrayList<>();
-                reloadL.add(ChatColor.RED + "WARNING: This could cause plugin unstability. I recommend");
-                reloadL.add(ChatColor.RED + "restarting the server if you're adding new plugins.");
-                reloadM.setLore(reloadL);
-                reload.setItemMeta(reloadM);
-
                 ItemMeta glassM = glass.getItemMeta();
                 glassM.setDisplayName(" ");
                 glass.setItemMeta(glassM);
@@ -50,7 +42,6 @@ public class mpbUI implements CommandExecutor {
                 exit.setItemMeta(exitM);
 
                 mpb.setItem(13, admin);
-                mpb.setItem(14, reload);
 
                 mpb.setItem(27, glass);
                 mpb.setItem(28, glass);
