@@ -22,7 +22,6 @@ public class mpbUI implements CommandExecutor {
             if (p.hasPermission("multiplayerbasics.panel")) {
                 Inventory mpb = Bukkit.createInventory(p, 36, ChatColor.AQUA + "MultiplayerBasics Panel");
                 ItemStack admin = new ItemStack(Material.DIAMOND_SWORD);
-                ItemStack reload = new ItemStack(Material.WOOL, 1, (short) 4);
                 ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
                 ItemStack exit =  new ItemStack(Material.BARRIER);
 
