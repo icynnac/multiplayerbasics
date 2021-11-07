@@ -1,6 +1,7 @@
 package me.icynnac.multiplayerbasics.Events;
 
 import me.icynnac.multiplayerbasics.GUIs.adminactUI;
+import me.icynnac.multiplayerbasics.GUIs.potionallUI;
 import me.icynnac.multiplayerbasics.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,6 +15,7 @@ public class mpbEvent implements Listener {
     public void mpb(InventoryClickEvent e) {
         Player p = (Player) e.getWhoClicked();
         adminactUI adminact = new adminactUI();
+        potionallUI potionall = new potionallUI();
         if (e.getView().getTitle().equalsIgnoreCase(ChatColor.AQUA + "MultiplayerBasics Panel")) {
             e.setCancelled(true);
             switch (e.getCurrentItem().getType()) {
@@ -27,14 +29,18 @@ public class mpbEvent implements Listener {
                     }
                     break;
                 case POTION:
-                    if (e.getSlot() == 0) {
-                        for (Player all : Bukkit.getServer().getOnlinePlayers()) {
-                            all.setHealth(20);
-                            all.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + "&5 You have been healed!"));
-                        }
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + "&5 Everyone has been healed."));
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + "&b Everyone has been healed."));
+                    if (e.getSlot() == 2) {
+                        p.closeInventory();
+                        p.openInventory(potionall.getPotionAllInventory());
                     }
+                    break;
+                case GOLDEN_APPLE:
+                    for (Player all : Bukkit.getServer().getOnlinePlayers()) {
+                        all.setHealth(20);
+                        all.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + "&5 You have been healed!"));
+                    }
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + "&5 Everyone has been healed."));
+                    Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + "&b Everyone has been healed."));
                     break;
                 case GRILLED_PORK:
                     for (Player all : Bukkit.getServer().getOnlinePlayers()) {
