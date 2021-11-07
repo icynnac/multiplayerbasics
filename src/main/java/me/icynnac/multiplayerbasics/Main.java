@@ -3,6 +3,7 @@ package me.icynnac.multiplayerbasics;
 import me.icynnac.multiplayerbasics.Events.adminactEvent;
 import me.icynnac.multiplayerbasics.Events.mpbEvent;
 import me.icynnac.multiplayerbasics.Events.mpbiEvent;
+import me.icynnac.multiplayerbasics.Events.potionallEvent;
 import me.icynnac.multiplayerbasics.GUIs.mpbUI;
 import me.icynnac.multiplayerbasics.GUIs.mpbiUI;
 import org.bukkit.ChatColor;
@@ -43,6 +44,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new mpbEvent(), this);
         getServer().getPluginManager().registerEvents(new mpbiEvent(), this);
         getServer().getPluginManager().registerEvents(new adminactEvent(), this);
+        getServer().getPluginManager().registerEvents(new potionallEvent(), this);
 
         Objects.requireNonNull(getCommand("mpb")).setExecutor(new mpbUI());
         getCommand("mpb").setPermissionMessage(ChatColor.translateAlternateColorCodes('&', prefix + " " + noperm));
