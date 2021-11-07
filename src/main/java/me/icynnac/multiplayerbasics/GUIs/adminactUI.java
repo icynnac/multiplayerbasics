@@ -14,7 +14,7 @@ public class adminactUI {
         Inventory adminact = Bukkit.createInventory(null, 27, ChatColor.RED + "MultiplayerBasics Admin");
 
         ItemStack stop = new ItemStack(Material.WOOL,1, (short) 14);
-        ItemStack restart = new ItemStack(Material.WOOL, 1, (short) 5);
+        ItemStack reload = new ItemStack(Material.WOOL, 1, (short) 5);
 
         ItemMeta stopM = stop.getItemMeta();
         stopM.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "Stop This Server");
@@ -25,15 +25,16 @@ public class adminactUI {
         stopM.setLore(stopL);
         stop.setItemMeta(stopM);
 
-        ItemMeta restartM = restart.getItemMeta();
-        restartM.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + "Restart This Server");
-        ArrayList<String> restartL = new ArrayList<>();
-        restartL.add(ChatColor.YELLOW + "Restart the server.");
-        restartM.setLore(restartL);
-        restart.setItemMeta(restartM);
+        ItemMeta reloadM = reload.getItemMeta();
+        reloadM.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + "Reload All Plugins");
+        ArrayList<String> reloadL = new ArrayList<>();
+        reloadL.add(ChatColor.RED + "WARNING: This could cause plugin unstability. I recommend");
+        reloadL.add(ChatColor.RED + "restarting the server if you're adding new plugins.");
+        reloadM.setLore(reloadL);
+        reload.setItemMeta(reloadM);
 
         adminact.setItem(12,stop);
-        adminact.setItem(14,restart);
+        adminact.setItem(14,reload);
         return adminact;
     }
 }
