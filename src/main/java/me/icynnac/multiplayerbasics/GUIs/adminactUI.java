@@ -36,7 +36,7 @@ public class adminactUI {
         ArrayList<String> stopL = new ArrayList<>();
         stopL.add(ChatColor.RED + "Fully stop the server, and kick all players.");
         stopL.add(ChatColor.RED + "" + ChatColor.BOLD + "WARNING: Server will not start back up");
-        stopL.add(ChatColor.RED + "" + ChatColor.BOLD + "unless you have console access.Do NOT use");
+        stopL.add(ChatColor.RED + "" + ChatColor.BOLD + "unless you have console access. Do NOT use");
         stopL.add(ChatColor.RED + "" + ChatColor.BOLD + "this command if you cannot start it back up.");
         stopM.setLore(stopL);
         stop.setItemMeta(stopM);
@@ -45,7 +45,7 @@ public class adminactUI {
         reloadM.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + "Reload All Plugins");
         ArrayList<String> reloadL = new ArrayList<>();
         reloadL.add(ChatColor.GREEN + "Reload all the server's plugins.");
-        reloadL.add(ChatColor.RED + "" + ChatColor.BOLD + "WARNING: This could cause plugin unstability. I recommend");
+        reloadL.add(ChatColor.RED + "" + ChatColor.BOLD + "WARNING: This could cause plugin instability. I recommend");
         reloadL.add(ChatColor.RED + "" + ChatColor.BOLD + "restarting the server if you're adding new plugins.");
         reloadM.setLore(reloadL);
         reload.setItemMeta(reloadM);
@@ -75,9 +75,18 @@ public class adminactUI {
         adminact.setItem(24, glass);
         adminact.setItem(25, glass);
         adminact.setItem(26, glass);
+        adminact.setItem(27, glass);
+        adminact.setItem(28, glass);
+        adminact.setItem(29, glass);
+        adminact.setItem(32, glass);
+        adminact.setItem(33, glass);
+        adminact.setItem(34, glass);
+        adminact.setItem(35, glass);
 
         adminact.setItem(12, stop);
         adminact.setItem(14, reload);
+        adminact.setItem(30, back);
+        adminact.setItem(31, exit);
         return adminact;
     }
 }
