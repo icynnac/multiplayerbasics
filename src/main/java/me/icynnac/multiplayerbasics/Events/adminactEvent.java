@@ -17,7 +17,7 @@ public class adminactEvent implements Listener {
             e.setCancelled(true);
             switch (e.getCurrentItem().getType()) {
                 case WOOL:
-                    if (e.getCurrentItem().getDurability() == 14) {
+                    if (e.getSlot() == 12) {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', ChatColor.translateAlternateColorCodes('&', Main.prefix + " &cShutting down...")));
                         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
                         scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
@@ -27,7 +27,7 @@ public class adminactEvent implements Listener {
                             Bukkit.getServer().shutdown();
                         },20*2);
                     }
-                    if (e.getCurrentItem().getDurability() == 5) {
+                    if (e.getSlot() == 14) {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " &aReloading..."));
                         Bukkit.reload();
                     }

@@ -9,12 +9,13 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class mpbiEvent implements Listener {
     @EventHandler
-    public void mb(InventoryClickEvent e) {
+    public void mpbi(InventoryClickEvent e) {
         Player p = (Player) e.getWhoClicked();
         if (e.getView().getTitle().equalsIgnoreCase(ChatColor.AQUA + "MultiplayerBasics Info")) {
             e.setCancelled(true);
             switch (e.getCurrentItem().getType()) {
                 case BOOK:
+                    p.closeInventory();
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&m>---------- &r&b&l Multiplayer&f&lBasics &f&m----------<"));
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&fMade by: &bIcynnac"));
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&fVersion: &bTEST VERSION"));
