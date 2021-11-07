@@ -4,3 +4,8 @@ messages:
   player-not-found: '&cNobody is online with that name. Did you spell it right?'
   no-permission: '&cNo permission. Please contact an administrator if this is a mistake.'
   console-denied: "&cYou cant use this command in console."
+  #Customize punishment messages here.
+  kick-shutdown-line-1: "&c&lYou were kicked from this server."
+  kick-shutdown-line-2: "&c&lReason: &fServer is Shutting Down."
+  kick-shutdown-line-3: "&c&lThis is not a ban, you were simply kicked and can rejoin later."
+  kick-shutdown-line-4: ""
