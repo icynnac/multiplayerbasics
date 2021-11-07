@@ -20,8 +20,8 @@ public class adminactUI {
         stopM.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "Stop This Server");
         ArrayList<String> stopL = new ArrayList<>();
         stopL.add(ChatColor.RED + "Fully stop the server, and kick all players.");
-        stopL.add(ChatColor.RED + "" + ChatColor.BOLD + "WARNING: Server will not start back up unless you have console access. Do NOT use");
-        stopL.add(ChatColor.RED + "" + ChatColor.BOLD + "this command if you cannot start it back up.");
+        stopL.add(ChatColor.RED + "" + ChatColor.BOLD + "WARNING: Server will not start back up unless you have console access.");
+        stopL.add(ChatColor.RED + "" + ChatColor.BOLD + "Do NOT use this command if you cannot start it back up.");
         stopM.setLore(stopL);
         stop.setItemMeta(stopM);
 
